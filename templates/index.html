@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Heart Disease Prediction</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:600px;
+            margin:40px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 15px gray;
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        input,select{
+
+            width:100%;
+            padding:10px;
+            margin:8px 0;
+
+        }
+
+        button{
+
+            width:100%;
+            padding:12px;
+            background:#007bff;
+            color:white;
+            border:none;
+            font-size:18px;
+            cursor:pointer;
+
+        }
+
+        button:hover{
+
+            background:#0056b3;
+
+        }
+
+        h2{
+
+            text-align:center;
+            color:green;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Heart Disease Prediction</h1>
+
+<form action="/predict" method="post">
+
+<input type="number" name="Age" placeholder="Age" required>
+
+<input type="text" name="Gender" placeholder="Male/Female" required>
+
+<input type="number" name="Weight" placeholder="Weight" required>
+
+<input type="number" name="Height" placeholder="Height" required>
+
+<input type="number" step="0.1" name="BMI" placeholder="BMI" required>
+
+<input type="text" name="Smoking" placeholder="Yes/No" required>
+
+<input type="text" name="Physical_Activity" placeholder="Low/Medium/High" required>
+
+<input type="text" name="Diet" placeholder="Healthy/Average/Unhealthy" required>
+
+<input type="text" name="Stress_Level" placeholder="Low/Medium/High" required>
+
+<input type="number" name="Hypertension" placeholder="Hypertension (0/1)" required>
+
+<input type="number" name="Diabetes" placeholder="Diabetes (0/1)" required>
+
+<input type="number" name="Hyperlipidemia" placeholder="Hyperlipidemia (0/1)" required>
+
+<input type="number" name="Family_History" placeholder="Family History (0/1)" required>
+
+<input type="number" name="Previous_Heart_Attack" placeholder="Previous Heart Attack (0/1)" required>
+
+<input type="number" name="Systolic_BP" placeholder="Systolic BP" required>
+
+<input type="number" name="Diastolic_BP" placeholder="Diastolic BP" required>
+
+<input type="number" name="Heart_Rate" placeholder="Heart Rate" required>
+
+<input type="number" step="0.1" name="Blood_Sugar_Fasting" placeholder="Blood Sugar Fasting" required>
+
+<input type="number" step="0.1" name="Cholesterol_Total" placeholder="Cholesterol Total" required>
+
+<button type="submit">
+
+Predict
+
+</button>
+
+</form>
+
+{% if prediction %}
+
+<h2>{{ prediction }}</h2>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
